@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8e0;
+  font-family: Arial, sans-serif;
+}
+
+#main-title {
+  text-align: center;
+  font-size: 36px;
+  color: #2e8b57;
+  margin-bottom: 20px;
+}
+
+#setting {
+  border: 2px solid #2e8b57;
+  width: 300px;
+  margin: 0 auto 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.setting-title {
+  text-align: center;
+  font-size: 20px;
+  color: #2e8b57;
+  margin-bottom: 10px;
+}
+
+#difficulty {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #2e8b57;
+  border-radius: 5px;
+}
+
+#custom-settings {
+  margin-top: 10px;
+}
+
+#grid-size-height,
+#grid-size-widht,
+#mines {
+  width: 60px;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid #2e8b57;
+  border-radius: 5px;
+}
+
+#start-game {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#start-game:hover {
+  background-color: #228b22;
+}
+
+#game-grid {
+  text-align: center;
+}
+
+#title-grid {
+  font-size: 24px;
+  color: #2e8b57;
+  margin-bottom: 10px;
+}
+
+#num-mines {
+  font-size: 18px;
+  color: #ff4500;
+  margin-bottom: 10px;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 2px solid #2e8b57;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #2e8b57;
+  text-align: center;
+  vertical-align: middle;
+  cursor: url(./esset/flag.png), auto;
+  font-size: 18px;
+  font-weight: bold;
+  background-image: url(./esset/grass.png);
+  transition: all 0.3s;
+}
+
+.flagged {
+  background-image: url(./esset/flag2.png);
+  background-size: cover;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.revealed {
+  background-color: #ddd;
+  background-image: none;
+  cursor: default;
+  color: #2e8b57;
+}
+
+
+.win{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(110, 255, 135, 0.396);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: rgba(0, 65, 11, 0.8);
+  z-index: 999;
+}
+
+.game-over{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.396);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: rgba(139, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campo Minato</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="main-title">Campo Minato</h1>
+    <div id="setting">
+      <h3 class="setting-title">Impostazioni:</h3>
+      <label for="difficulty">Seleziona difficoltà:</label><br />
+      <select id="difficulty" onchange="setDifficulty()">
+        <option value="custom">Personalizzato</option>
+        <option value="easy">Facile (9x9, 10 mine)</option>
+        <option value="medium">Medio (16x16, 40 mine)</option>
+        <option value="hard">Difficile (16x30, 99 mine)</option></select
+      ><br /><br />
+      <div id="custom-settings" style="display: block">
+        <label for="grid-size">Seleziona la dimensione della griglia:</label
+        ><br />
+        <input
+          type="number"
+          name="grid-size"
+          id="grid-size-height"
+          placeholder="5"
+          min="5"
+          max="30"
+          value="5"
+        />
+        x
+        <input
+          type="number"
+          name="grid-size"
+          id="grid-size-widht"
+          placeholder="5"
+          min="5"
+          max="30"
+          value="5"
+        />
+        <label for="mines">Inserisci con quante mine vuoi giocare:</label>
+        <input
+          type="number"
+          name="mines"
+          id="mines"
+          placeholder="5"
+          min="1"
+          value="5"
+        />
+      </div>
+      <button id="start-game" onclick="Start()">Start Game</button>
+    </div>
+    <div id="game-grid">
+      <h2 id="title-grid"></h2>
+      <p id="num-mines" style="text-align: center"></p>
+      <table id="table"></table>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
