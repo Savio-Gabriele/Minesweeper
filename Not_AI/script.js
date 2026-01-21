@@ -1,4 +1,3 @@
-// Disabilita il menu tasto destro
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
@@ -161,9 +160,7 @@ function revealCell(e) {
   let r = +e.target.dataset.row;
   let c = +e.target.dataset.col;
 
-  if (flagged[r][c]) {
-    return;
-  }
+  if (flagged[r][c]) {return};
 
   if (firstClick) {
     placeMines(r, c);
@@ -250,7 +247,7 @@ function revealAllMines() {
     for (let j = 0; j < width; j++) {
       if (minesGrid[i][j]) {
         let cell = document.querySelector(
-          `td[data-row="${i}"][data-col="${j}"]`,
+          `td[data-row="${i}"][data-col="${j}"]`
         );
         cell.style.backgroundImage = "url(./esset/bomb.png)";
         cell.classList.add("revealed");
