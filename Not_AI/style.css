@@ -171,7 +171,6 @@ td {
   }
 }
 
-/* Container per i bottoni affiancati */
 .buttons-container {
   position: fixed;
   top: 50%;
@@ -183,51 +182,35 @@ td {
 }
 
 .replay-button {
-  padding: 18px 45px;
-  background: linear-gradient(135deg, #4169e1 0%, #1e3a8a 100%);
+  padding: 15px 35px;
+  background-color: #4169e1;
   color: white;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .restart-button {
-  padding: 18px 45px;
-  background: linear-gradient(135deg, #2e8b57 0%, #228b22 100%);
+  padding: 15px 35px;
+  background-color: #2e8b57;
   color: white;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .replay-button:hover {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-  transform: scale(1.1);
-  border-color: rgba(255, 255, 255, 0.6);
+  background-color: #1e3a8a;
 }
 
 .restart-button:hover {
-  background: linear-gradient(135deg, #228b22 0%, #1e7a1e 100%);
-  transform: scale(1.1);
-  border-color: rgba(255, 255, 255, 0.6);
+  background-color: #228b22;
 }
 
-.replay-button:active,
-.restart-button:active {
-  transform: scale(1.05);
-}
-
-/* Overlay trasparente durante il replay */
 .replay-overlay {
   position: fixed;
   top: 0;
@@ -239,25 +222,21 @@ td {
   pointer-events: all;
 }
 
-/* Bottone Rigioca che appare dal basso durante il replay */
 .restart-button-bottom {
   position: fixed;
   bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 18px 45px;
-  background: linear-gradient(135deg, #2e8b57 0%, #228b22 100%);
+  padding: 15px 35px;
+  background-color: #2e8b57;
   color: white;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   z-index: 999;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .restart-button-bottom.show {
@@ -265,14 +244,5 @@ td {
 }
 
 .restart-button-bottom:hover {
-  background: linear-gradient(135deg, #228b22 0%, #1e7a1e 100%);
-  transform: translateX(-50%) scale(1.1);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(46, 139, 87, 0.8);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.restart-button-bottom:active {
-  transform: translateX(-50%) scale(1.05);
+  background-color: #228b22;
 }
