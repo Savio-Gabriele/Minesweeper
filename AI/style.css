@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.topbar {
+  margin-bottom: 10px;
+}
+
+select,
+button {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+#info {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#gioco {
+  display: grid;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cella {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border: 1px solid #888;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  line-height: 40px;
+}
+
+.cella.scoperta {
+  background: #eee;
+  cursor: default;
+}
+
+.cella.bomba {
+  background: #ff8080;
+}
+
+.cella.bandiera {
+  background: #ffdd77;
+}
+
+#schermataFinale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#schermataFinale.vittoria {
+  background: rgba(0, 180, 0, 0.7);
+}
+
+#schermataFinale.sconfitta {
+  background: rgba(200, 0, 0, 0.7);
+}
+
+#contenutoFinale {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 250px;
+}
+
+#contenutoFinale h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .cella {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cella {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+}

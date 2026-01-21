@@ -161,7 +161,9 @@ function revealCell(e) {
   let r = +e.target.dataset.row;
   let c = +e.target.dataset.col;
 
-  if (flagged[r][c]) {return};
+  if (flagged[r][c]) {
+    return;
+  }
 
   if (firstClick) {
     placeMines(r, c);
@@ -248,7 +250,7 @@ function revealAllMines() {
     for (let j = 0; j < width; j++) {
       if (minesGrid[i][j]) {
         let cell = document.querySelector(
-          `td[data-row="${i}"][data-col="${j}"]`
+          `td[data-row="${i}"][data-col="${j}"]`,
         );
         cell.style.backgroundImage = "url(./esset/bomb.png)";
         cell.classList.add("revealed");
@@ -269,27 +271,74 @@ function checkWin() {
 }
 
 function displayGameOver() {
-  let gameOver = document.createElement("div");
-  gameOver.className = "game-over";
-  gameOver.innerText = "Game Over!";
-  document.body.appendChild(gameOver);
-  rigiocaRestart();
+  let gameOverDiv = document.createElement("div");
+  gameOverDiv.className = "game-over";
+  gameOverDiv.innerText = "Game Over!";
+  document.body.appendChild(gameOverDiv);
+  createRestartButton();
 }
 
 function displayWin() {
-  let win = document.createElement("div");
-  win.className = "win";
-  win.innerText = "Hai vinto!";
-  document.body.appendChild(win);
-  rigiocaRestart();
+  let winDiv = document.createElement("div");
+  winDiv.className = "win";
+  winDiv.innerText = "Hai vinto!";
+  document.body.appendChild(winDiv);
+  createRestartButton();
 }
 
-function rigiocaRestart() {
-  let button = document.createElement("button");
-  button.innerText = "Rigioca";
-  button.className = "restart-button";
-  button.addEventListener("click", () => {
+function createRestartButton() {
+  let container = document.createElement("div");
+  container.className = "buttons-container";
+
+  let replayBtn = document.createElement("button");
+  replayBtn.innerText = "Rivedi Partita";
+  replayBtn.className = "replay-button";
+  replayBtn.addEventListener("click", () => {
+    seeMatch();
+  });
+
+  let restartBtn = document.createElement("button");
+  restartBtn.innerText = "Rigioca";
+  restartBtn.className = "restart-button";
+  restartBtn.addEventListener("click", () => {
     location.reload();
   });
-  document.body.appendChild(button);
+
+  container.appendChild(replayBtn);
+  container.appendChild(restartBtn);
+  document.body.appendChild(container);
+}
+
+function seeMatch() {
+  let winDiv = document.querySelector(".win");
+  let gameOverDiv = document.querySelector(".game-over");
+  let buttonsContainer = document.querySelector(".buttons-container");
+
+  if (winDiv) {
+    winDiv.remove();
+  }
+  if (gameOverDiv) {
+    gameOverDiv.remove();
+  }
+  if (buttonsContainer) {
+    buttonsContainer.remove();
+  }
+
+  let overlay = document.createElement("div");
+  overlay.className = "replay-overlay";
+  overlay.id = "replay-overlay";
+  document.body.appendChild(overlay);
+
+  let bottomBtn = document.createElement("button");
+  bottomBtn.innerText = "Rigioca";
+  bottomBtn.className = "restart-button-bottom";
+  bottomBtn.id = "restart-bottom";
+  bottomBtn.addEventListener("click", () => {
+    location.reload();
+  });
+  document.body.appendChild(bottomBtn);
+
+  setTimeout(() => {
+    bottomBtn.classList.add("show");
+  }, 300);
 }

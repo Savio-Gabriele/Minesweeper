@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Campo Minato</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Campo Minato</h1>
+
+    <div class="topbar">
+      <select id="difficolta">
+        <option value="facile">Facile</option>
+        <option value="medio">Medio</option>
+        <option value="difficile">Difficile</option>
+      </select>
+      <button onclick="avviaPartita()">Nuova Partita</button>
+    </div>
+
+    <div id="info">Bandiere: <span id="contatoreBandiere">0</span></div>
+
+    <div id="gioco"></div>
+
+    <div id="schermataFinale">
+      <div id="contenutoFinale">
+        <h2 id="titoloFinale"></h2>
+        <p id="testoFinale"></p>
+        <button onclick="chiudiSchermataEAvvia()">Nuova partita</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
