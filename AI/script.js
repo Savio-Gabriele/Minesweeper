@@ -8,7 +8,6 @@ function avviaPartita() {
   nascondiSchermataFinale();
 
   const difficolta = document.getElementById("difficolta").value;
-
   if (difficolta === "facile") {
     dimensione = 8;
     numeroBombe = 10;

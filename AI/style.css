@@ -66,26 +66,38 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  pointer-events: none;
 }
 
 #schermataFinale.vittoria {
-  background: rgba(0, 180, 0, 0.7);
+  background: rgba(0, 200, 0, 0.25);
 }
 
 #schermataFinale.sconfitta {
-  background: rgba(200, 0, 0, 0.7);
+  background: rgba(200, 0, 0, 0.25);
 }
 
 #contenutoFinale {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
   text-align: center;
-  min-width: 250px;
+  color: white;
+  text-shadow: 0 0 10px black;
+  pointer-events: auto;
 }
 
 #contenutoFinale h2 {
-  margin-top: 0;
+  font-size: 60px;
+  margin: 0;
+}
+
+#contenutoFinale p {
+  font-size: 22px;
+  margin: 10px 0 20px 0;
+}
+
+#contenutoFinale button {
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -95,6 +107,16 @@ button {
     font-size: 14px;
     line-height: 30px;
   }
+  #contenutoFinale h2 {
+    font-size: 40px;
+  }
+  #contenutoFinale p {
+    font-size: 18px;
+  }
+  #contenutoFinale button {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -103,5 +125,15 @@ button {
     height: 24px;
     font-size: 12px;
     line-height: 24px;
+  }
+  #contenutoFinale h2 {
+    font-size: 30px;
+  }
+  #contenutoFinale p {
+    font-size: 14px;
+  }
+  #contenutoFinale button {
+    font-size: 14px;
+    padding: 4px 8px;
   }
 }
